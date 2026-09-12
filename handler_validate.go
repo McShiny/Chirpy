@@ -13,7 +13,7 @@ func handlerChirpValidate(w http.ResponseWriter, r *http.Request) {
 		Valid bool `json:"valid"`
 	}
 
-	decode := json.NewDecoder(r.Body)
+	decoder := json.NewDecoder(r.Body)
 	params := parameters{}
 	err := decoder.Decode(&params)
 	if err != nil {
